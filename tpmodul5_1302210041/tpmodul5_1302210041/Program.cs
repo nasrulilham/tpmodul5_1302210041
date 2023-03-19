@@ -1,13 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
-public class HaloGeneric
-{
-    private static void Main(string[] args)
-    {
-        Console.WriteLine("Halo User " + SapaUser("Nasrul"));
-    }
+using System.Security.Cryptography.X509Certificates;
 
-    public static Nas SapaUser<Nas>(Nas a)
+class DataGeneric<K>
+{
+    private K data;
+
+    public DataGeneric(K data)
     {
-        return (dynamic)a;
+        this.data = data;
+    }
+    public void printData()
+    {
+        Console.WriteLine("Data yang tersimpan adalah : " + data);
     }
 }
+public class program
+{
+    public static void Main(string[] args)
+    {
+        DataGeneric<String> dat = new DataGeneric<String> ("1302210041");
+        dat.printData();
+    }
+}
+
